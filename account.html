@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My account | QuickBite</title>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/account.js"></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container page" id="account-root" hidden>
+      <h1>My account</h1>
+
+      <section class="panel" aria-labelledby="profile-title">
+        <h2 id="profile-title">Profile</h2>
+        <div id="profile-msg" class="form-msg" role="status" hidden></div>
+        <form id="profile-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" readonly />
+            <span class="hint">Your email can't be changed here.</span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="full_name">Full name</label>
+              <input id="full_name" name="full_name" autocomplete="name" maxlength="100" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="20" />
+            </div>
+          </div>
+          <button class="btn" type="submit">Save changes</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="addr-title">
+        <h2 id="addr-title">Saved delivery addresses</h2>
+        <div id="address-msg" class="form-msg" role="status" hidden></div>
+        <ul id="address-list" class="addr-list"></ul>
+        <form id="address-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="a-label">Label (optional)</label>
+              <input id="a-label" name="label" maxlength="40" placeholder="Home, Work…" />
+            </div>
+            <div class="field">
+              <label for="a-street">Street address</label>
+              <input id="a-street" name="street" autocomplete="address-line1" maxlength="200" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="a-suburb">Suburb</label>
+              <input id="a-suburb" name="suburb" maxlength="100" />
+            </div>
+            <div class="field">
+              <label for="a-city">City / town</label>
+              <input id="a-city" name="city" autocomplete="address-level2" maxlength="100" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="a-postal">Postal code</label>
+              <input id="a-postal" name="postal_code" autocomplete="postal-code" maxlength="10" />
+            </div>
+            <div class="field">
+              <label for="a-instructions">Delivery instructions (optional)</label>
+              <input id="a-instructions" name="instructions" maxlength="300" />
+            </div>
+          </div>
+          <button class="btn btn--outline" type="submit">Add address</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="pw-title">
+        <h2 id="pw-title">Change password</h2>
+        <div id="password-msg" class="form-msg" role="status" hidden></div>
+        <form id="password-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="new-password">New password</label>
+              <input id="new-password" name="password" type="password" autocomplete="new-password" minlength="8" />
+            </div>
+            <div class="field">
+              <label for="confirm-password">Confirm new password</label>
+              <input id="confirm-password" name="confirm" type="password" autocomplete="new-password" />
+            </div>
+          </div>
+          <button class="btn btn--outline" type="submit">Update password</button>
+        </form>
+      </section>
+
+      <button id="logout" class="btn btn--outline" type="button">Log out</button>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

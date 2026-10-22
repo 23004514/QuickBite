@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse the QuickBite menu: burgers, pizza, chicken, wraps, snacks, desserts and drinks." />
+    <title>Menu | QuickBite</title>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/menu.js"></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container menu">
+      <h1>Our Menu</h1>
+
+      <div class="toolbar">
+        <label class="sr-only" for="search">Search the menu</label>
+        <input id="search" type="search" placeholder="Search burgers, pizza, shakes…" autocomplete="off" maxlength="60" />
+        <label class="sr-only" for="sort">Sort by</label>
+        <select id="sort">
+          <option value="popular">Popular first</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+
+      <div id="category-chips" class="chips" role="group" aria-label="Filter by category"></div>
+      <p id="result-count" class="muted" aria-live="polite"></p>
+      <div id="product-grid" class="grid"></div>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | QuickBite</title>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/checkout.js"></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container page">
+      <h1>Checkout</h1>
+      <div id="checkout-status" aria-live="polite"></div>
+
+      <div id="checkout-layout" class="layout-2" hidden>
+        <form id="checkout-form" novalidate>
+          <div id="form-msg" class="form-msg" role="alert" hidden></div>
+
+          <section class="panel" aria-labelledby="contact-title">
+            <h2 id="contact-title">Your details</h2>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" autocomplete="name" maxlength="100" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="20" required />
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="fulfil-title">
+            <h2 id="fulfil-title">Delivery or collection</h2>
+            <label class="choice">
+              <input type="radio" name="fulfilment" value="delivery" checked />
+              <span>Delivery<small>We bring it to your address</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="fulfilment" value="collection" />
+              <span>Collection<small>Pick it up from the restaurant</small></span>
+            </label>
+          </section>
+
+          <section class="panel" id="address-panel" aria-labelledby="addr-title">
+            <h2 id="addr-title">Delivery address</h2>
+            <div class="field" id="saved-address-field" hidden>
+              <label for="saved-address">Saved addresses</label>
+              <select id="saved-address"></select>
+            </div>
+            <div class="field">
+              <label for="street">Street address</label>
+              <input id="street" name="street" autocomplete="address-line1" maxlength="200" />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="suburb">Suburb</label>
+                <input id="suburb" name="suburb" maxlength="100" />
+              </div>
+              <div class="field">
+                <label for="city">City / town</label>
+                <input id="city" name="city" autocomplete="address-level2" maxlength="100" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="postal_code">Postal code</label>
+                <input id="postal_code" name="postal_code" autocomplete="postal-code" maxlength="10" />
+              </div>
+              <div class="field">
+                <label for="instructions">Delivery instructions (optional)</label>
+                <input id="instructions" name="instructions" maxlength="300" />
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="pay-title">
+            <h2 id="pay-title">Payment</h2>
+            <div id="payment-options"></div>
+          </section>
+
+          <section class="panel">
+            <div class="field">
+              <label for="notes">Order notes (optional)</label>
+              <textarea id="notes" name="notes" rows="2" maxlength="500"></textarea>
+            </div>
+            <button id="place-order" class="btn btn--accent btn--block" type="submit">Place order</button>
+          </section>
+        </form>
+
+        <aside class="panel" aria-labelledby="summary-title">
+          <h2 id="summary-title">Order summary</h2>
+          <ul id="summary-items" class="cart-list"></ul>
+          <div class="field">
+            <label for="promo">Promo code</label>
+            <div class="inline-form">
+              <input id="promo" maxlength="30" autocomplete="off" />
+              <button id="promo-apply" class="btn btn--sm btn--outline" type="button">Apply</button>
+            </div>
+          </div>
+          <div id="promo-msg" class="form-msg" role="status" hidden></div>
+          <div id="summary-totals"></div>
+          <p class="muted">The final total is confirmed by our system when you place the order.</p>
+        </aside>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in | QuickBite</title>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/login.js"></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <div class="auth-card">
+        <h1>Welcome back</h1>
+        <p class="muted">Log in to place orders and track them.</p>
+        <div id="form-msg" class="form-msg" role="alert" hidden></div>
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <button class="btn btn--block" type="submit">Log in</button>
+        </form>
+        <div class="auth-links">
+          <a href="/reset-password.html">Forgot password?</a>
+          <a id="register-link" href="/register.html">Create an account</a>
+        </div>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

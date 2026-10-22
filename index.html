@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="QuickBite: fast food ordering, delivered or ready for collection." />
+    <title>QuickBite | Fast Food Ordering</title>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/home.js"></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <div id="promo-strip" class="promo" hidden></div>
+
+    <main>
+      <section class="hero">
+        <!-- Optional: add public/images/hero.jpg for a photo background; it is removed if missing -->
+        <img class="hero__img" src="/images/hero.jpg" alt="" onerror="this.remove()" />
+        <div class="container">
+          <div class="hero__inner">
+            <h1>Hot, fresh and <span>fast</span>.</h1>
+            <p>Burgers, pizza, chicken and shakes made to order. Delivered to your door or ready for collection.</p>
+            <div class="hero__actions">
+              <a class="btn btn--accent" href="/menu.html">Order now</a>
+              <a class="btn btn--light" href="/menu.html?sort=price-asc">See budget picks</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="cats-title">
+        <div class="container">
+          <div class="section__head"><h2 class="section__title" id="cats-title">Browse by category</h2></div>
+          <div id="category-grid" class="cat-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--tint" aria-labelledby="popular-title">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" id="popular-title">Popular right now</h2>
+            <a href="/menu.html">View full menu &rarr;</a>
+          </div>
+          <div id="popular-grid" class="grid"></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="how-title">
+        <div class="container">
+          <div class="section__head"><h2 class="section__title" id="how-title">How it works</h2></div>
+          <div class="steps">
+            <div class="step"><span class="step__num">1</span><h3>Pick your meal</h3><p>Browse the menu and add your favourites.</p></div>
+            <div class="step"><span class="step__num">2</span><h3>Choose delivery or collection</h3><p>Tell us where and how you want it.</p></div>
+            <div class="step"><span class="step__num">3</span><h3>Track your order</h3><p>Follow it from kitchen to doorstep.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <h2>Hungry? Your order is a few taps away.</h2>
+        <a class="btn btn--accent" href="/menu.html">Start your order</a>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

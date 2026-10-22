@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact QuickBite." />
+    <title>Contact | QuickBite</title>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/contact.js"></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <div class="auth-card">
+        <h1>Contact us</h1>
+        <p class="muted">Send us a message and we'll get back to you.</p>
+        <div id="form-msg" class="form-msg" role="alert" hidden></div>
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" maxlength="100" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="200" required />
+          </div>
+          <div class="field">
+            <label for="subject">Subject (optional)</label>
+            <input id="subject" name="subject" maxlength="150" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" maxlength="2000" required></textarea>
+          </div>
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <button class="btn btn--block" type="submit">Send message</button>
+        </form>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>
